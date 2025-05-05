@@ -12,6 +12,8 @@
     <h1>Berlatih Array</h1>
 
     <?php
+    $nama = "dika";
+         echo $name[strlen($nama)-1] == "a";
     echo "<h3> Soal 1 </h3>";
     /* 
             SOAL NO 1
@@ -143,6 +145,8 @@
          	],
          ];
          print_r($data);
+
+         echo "<br>"
     ?>
 </body>
 
