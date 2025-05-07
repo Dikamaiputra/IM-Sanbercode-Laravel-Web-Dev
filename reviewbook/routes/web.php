@@ -9,6 +9,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [DashboardController::class, 'index']);
-Route::get('/welcome', [FormController::class, 'welcome'])->name('welcome');
+Route::post('/welcome', [FormController::class, 'welcome'])->name('welcome');
 Route::get('/register', [FormController::class, 'register'])->name('register');
 

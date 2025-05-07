@@ -12,7 +12,6 @@
 	<h2>Sign Up  Form</h2>
 	<form action="{{ route('welcome') }}" method="post">
 		@csrf
-		@method('GET')
 		<label for="firstName">First name:</label><br><br>
 		<input type="text" name="firstName"><br><br>
 
