@@ -8,6 +8,12 @@
 @endsection
 
 @section('content')
+
+    @if (session()->has('sukses'))
+        <div class="alert alert-success" role="alert">
+            {{ session()->get('sukses') }}
+        </div>        
+    @endif
     <table class="table">
         <thead>
             <tr>
@@ -32,6 +38,9 @@
                     </td>
                 </tr>
             @endforeach
+            <tr>
+                <td><a href="{{ route('genre.create') }}">Tambah Data Baru</a></td>
+            </tr>
         </tbody>
     </table>
 @endsection

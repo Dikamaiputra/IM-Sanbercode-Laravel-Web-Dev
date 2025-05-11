@@ -19,24 +19,5 @@
     <div class="card-footer">
         <a href="{{ route('genre.index') }}" class="btn btn-outline-primary">Kembali</a>
     </div>
-    {{-- <table class="table">
-        <thead>
-            <tr>
-                <td >NO</td>
-                <td>Nama Genre</td>
-                <td>Action</td>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($genre as $data)
-                <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $data->name }}</td>
-                    <td>
-                        <a href="{{ route('genre.show', $data->genre_id) }}" class="btn btn-outline-primary">Detail</a>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table> --}}
+    
 @endsection

@@ -43,7 +43,7 @@ class GenreController extends Controller
             'description' => $request->description
         ]);
 
-        return redirect()->route('genre.index');
+        return redirect()->route('genre.index')->with('sukses', 'Berhasil Menambahkan Data!');
     }
 
     /**
@@ -75,7 +75,7 @@ class GenreController extends Controller
             'description' => $request->description
         ]);
 
-        return redirect()->route('genre.index');
+        return redirect()->route('genre.index')->with('sukses', 'Berhasil Mengubah Data!');;
     }
 
     /**
@@ -86,6 +86,6 @@ class GenreController extends Controller
         $data = Genre::find($id);
         $data->delete();
 
-        return redirect()->route('genre.index');
+        return redirect()->route('genre.index')->with('sukses', 'Berhasil Menghapus Data!');;
     }
 }
