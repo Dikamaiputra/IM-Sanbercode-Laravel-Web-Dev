@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\GenreController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -11,4 +12,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DashboardController::class, 'index']);
 Route::post('/welcome', [FormController::class, 'welcome'])->name('welcome');
 Route::get('/register', [FormController::class, 'register'])->name('register');
+
+route::resource('genre', GenreController::class);
 
