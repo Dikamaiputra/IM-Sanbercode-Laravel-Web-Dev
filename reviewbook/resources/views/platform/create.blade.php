@@ -1,18 +1,18 @@
 @extends('../layouts.master')
 @section('title')
-  GENRE
+  Platform
 @endsection
 
 @section('content-title')
-    <h1>Create New Genre</h1>
+    <h1>Create New Platform</h1>
 @endsection
 
 @section('content')
-<form action="{{ route('genre.store') }}" method="POST">
+<form action="{{ route('platform.store') }}" method="POST">
   @csrf
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Name Genre</label>
-      <input type="text" class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1" name="name" aria-describedby="emailHelp">
+      <label for="exampleInput" class="form-label">Name Platform</label>
+      <input type="text" class="form-control @error('name') is-invalid @enderror" id="exampleInput" name="name" aria-describedby="emailHelp">
       @error('name')
           <div class="alert alert-danger">{{ $message }}</div>
       @enderror

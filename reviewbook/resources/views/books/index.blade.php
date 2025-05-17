@@ -1,10 +1,10 @@
 @extends('../layouts.master')
 @section('title')
-    Genre
+    BOOKS
 @endsection
 
 @section('content-title')
-    <h1>List Data Genre</h1>
+    <h1>List Data Buku</h1>
 @endsection
 
 @section('content')
@@ -14,31 +14,30 @@
             {{ session()->get('sukses') }}
         </div>        
     @endif
-<div class="table-responsive-lg">
     <table class="table">
         <thead>
             <tr>
-                <td scope="col">NO</td>
-                <td scope="col">Nama Genre</td>
-                <td scope="col">Action</td>
+                <td >NO</td>
+                <td>Title</td>
+                <td>Action</td>
             </tr>
         </thead>
         <tbody>
-            @foreach ($genre as $data)
+            @foreach ($books as $data)
                 <tr>
-                    <th scope="row">{{ $loop->iteration }}</th>
-                    <td>{{ $data->name }}</td>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $data->title }}</td>
                     <td>
                         @auth 
                             @if (Auth::user()->role === 'user')
-                            <a href="{{ route('genre.show', $data->id) }}" class="btn btn-outline-primary">Detail</a>
+                            <a href="{{ route('books.show', $data->id) }}" class="btn btn-outline-primary">Detail</a>
                             @endif
                         @endauth
                         @auth 
                             @if (Auth::user()->role === 'admin')
-                            <a href="{{ route('genre.show', $data->id) }}" class="btn btn-outline-primary">Detail</a>
-                            <a href="{{ route('genre.edit', $data->id) }}" class="btn btn-outline-warning">Edit</a>
-                            <form action="{{ route('genre.destroy', $data->id) }}" method="post" class="d-inline">
+                            <a href="{{ route('books.show', $data->id) }}" class="btn btn-outline-primary">Detail</a>
+                            <a href="{{ route('books.edit', $data->id) }}" class="btn btn-outline-warning">Edit</a>
+                            <form action="{{ route('books.destroy', $data->id) }}" method="post" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-outline-danger">Delete</button>
@@ -52,11 +51,10 @@
             @auth
                 @if (Auth::user()->role === 'admin')
                     <tr>
-                        <td><a href="{{ route('genre.create') }}">Tambah Data Baru</a></td>
+                        <td><a href="{{ route('books.create') }}">Tambah Data Baru</a></td>
                     </tr>
                 @endif
             @endauth
         </tbody>
     </table>
-</div>
 @endsection

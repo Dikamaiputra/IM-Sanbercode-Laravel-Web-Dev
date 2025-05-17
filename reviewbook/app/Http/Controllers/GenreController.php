@@ -85,7 +85,7 @@ class GenreController extends Controller
     {
         $data = Genre::find($id);
         $data->delete();
-
-        return redirect()->route('genre.index')->with('sukses', 'Berhasil Menghapus Data!');;
+ 
+        return redirect()->route('genre.index')->with('sukses', 'Berhasil Menghapus Data!');
     }
 }

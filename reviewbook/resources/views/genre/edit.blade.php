@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-<form action="{{ route('genre.update', $data->genre_id) }}" method="POST">
+<form action="{{ route('genre.update', $data->id) }}" method="POST">
   @csrf
   @method('PUT')
     <div class="mb-3">

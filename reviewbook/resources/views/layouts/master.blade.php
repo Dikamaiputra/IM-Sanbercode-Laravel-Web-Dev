@@ -23,6 +23,7 @@
   <link href="{{ asset('company/assets/vendor/aos/aos.css') }}" rel="stylesheet">
   <link href="{{ asset('company/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
   <link href="{{ asset('company/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="{{ asset('company/assets/css/main.css') }}" rel="stylesheet">
@@ -43,10 +44,18 @@
   <main class="main">
 
     <!-- Page Title -->
+    @auth
     <div class="page-title accent-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
         <h1 class="mb-2 mb-lg-0">@yield('title')</h1>
+        @auth
+            <form action="{{ route('logout') }}" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+        @endauth
       </div>
+      @endauth
     </div><!-- End Page Title -->
 
     <!-- Starter Section Section -->

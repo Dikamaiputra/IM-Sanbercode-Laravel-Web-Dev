@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Genre extends Model
 {
-    protected $primaryKey = 'genre_id';
     protected $fillable = [
         'name',
         'description',
     ];
+
+    public function books()
+{
+    return $this->hasMany(Books::class);
+}
 }
